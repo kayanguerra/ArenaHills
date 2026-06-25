@@ -35,7 +35,8 @@ html { scroll-behavior: smooth; }
 
 /* ── Hero ────────────────────────────────── */
 .hero-bg {
-    background: linear-gradient(160deg, #0F172A 0%, #1a2d6e 45%, #0F172A 100%);
+    /* background: linear-gradient(160deg, #0F172A 0%, #1a2d6e 45%, #0F172A 100%); */
+    background: url('../img/BackGround) center center / cover no-repeat;
 }
 
 /* Particles.js: ocupa todo o hero, abaixo do conteúdo */
