@@ -1,0 +1,268 @@
+/* ═══════════════════════════════════════════
+   Arena Hills – Estilos Personalizados
+   Paleta:
+     Azul Principal  #26439A
+     Azul Escuro     #1B2F73
+     Azul Claro      #3155C7
+     Verde           #7CC242
+     Fundo           #0F172A
+     Card            #1E293B
+     Borda           #334155
+     Cinza           #94A3B8
+═══════════════════════════════════════════ */
+
+* { font-family: 'Inter', sans-serif; }
+html { scroll-behavior: smooth; }
+
+/* ── Navbar ─────────────────────────────── */
+#navbar { transition: background .3s, box-shadow .3s; }
+#navbar.scrolled {
+    background: rgba(15,23,42,.97) !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,.5);
+}
+.nav-link { position: relative; }
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #7CC242;
+    transition: width .3s;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ── Hero ────────────────────────────────── */
+.hero-bg {
+    background: linear-gradient(160deg, #0F172A 0%, #1a2d6e 45%, #0F172A 100%);
+}
+
+/* Particles.js: ocupa todo o hero, abaixo do conteúdo */
+#particles-js {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+#particles-js canvas {
+    display: block;
+}
+
+/* Linhas diagonais de velocidade */
+.hero-stripes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        -58deg,
+        transparent 0px, transparent 72px,
+        rgba(255,255,255,.022) 72px, rgba(255,255,255,.022) 73px
+    );
+}
+
+/* SVG decorativo (arco, rede, swoosh) */
+.hero-deco {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Onda na base do hero */
+.hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}
+.hero-wave svg { display: block; }
+
+/* ── Texto gradiente ─────────────────────── */
+.grad-text {
+    background: linear-gradient(135deg, #3155C7, #7CC242);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── Cards com hover ─────────────────────── */
+.card-h { transition: transform .3s, box-shadow .3s; }
+.card-h:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(38,67,154,.3);
+}
+
+/* ── Scroll reveal ───────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .65s ease, transform .65s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Divisor de seção ────────────────────── */
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #26439A, transparent);
+}
+
+/* ── Ícone de check ──────────────────────── */
+.check-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: rgba(124,194,66,.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Badge pulsante ──────────────────────── */
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: .4; }
+}
+.pulse-dot { animation: pulse-dot 2s infinite; }
+
+/* ── Botão flutuante WhatsApp ────────────── */
+#wpp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,.45);
+    transition: transform .3s, box-shadow .3s;
+}
+#wpp-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 28px rgba(37,211,102,.65);
+}
+
+/* ── Seta de scroll (bounce) ─────────────── */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) translateX(-50%); }
+    50%       { transform: translateY(-10px) translateX(-50%); }
+}
+.bounce { animation: bounce 1.8s infinite; }
+
+/* ═══════════════════════════════════════════
+   GYM PREMIUM — Estilo Smart Fit / Bluefit
+═══════════════════════════════════════════ */
+
+/* ── Fonte condensada para títulos ──────── */
+.gym-h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 0.9;
+}
+.gym-h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1;
+}
+
+/* ── Label de seção com barra de acento ── */
+.label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #7CC242;
+}
+.label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #7CC242;
+    flex-shrink: 0;
+}
+
+/* ── Card com borda lateral (gym style) ── */
+.gym-card {
+    background: #1E293B;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.05);
+    border-left: 3px solid #26439A;
+    transition: border-left-color .3s, transform .3s, box-shadow .3s;
+}
+.gym-card:hover {
+    border-left-color: #7CC242;
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(38,67,154,.28);
+}
+
+/* ── Stat item (linha verde lateral) ───── */
+.stat-item {
+    border-left: 3px solid #7CC242;
+    padding-left: 1rem;
+}
+.stat-item .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 2.8rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+/* ── Botão CTA estilo academia ────────── */
+.btn-gym {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: 6px;
+    transition: opacity .2s, transform .2s;
+}
+.btn-gym:hover { opacity: .9; transform: translateY(-2px); }
+
+.btn-gym-primary {
+    background: linear-gradient(135deg, #26439A, #3155C7);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(38,67,154,.4);
+}
+.btn-gym-outline {
+    border: 2px solid #7CC242;
+    color: #7CC242;
+    background: rgba(124,194,66,.05);
+}
+
+/* ── Faixa de stats (banner horizontal) ─ */
+.stats-banner {
+    background: linear-gradient(90deg, #0d1b3e 0%, #1B2F73 50%, #0d1b3e 100%);
+    border-top: 2px solid #7CC242;
+    border-bottom: 2px solid rgba(38,67,154,.4);
+}
+
+/* ── Barra divisória colorida ────────── */
+.divider-gym {
+    height: 3px;
+    background: linear-gradient(90deg, #7CC242 0%, #26439A 40%, transparent 100%);
+}
